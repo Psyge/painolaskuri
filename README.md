@@ -1,0 +1,2 @@
+# painolaskuri
+Sarjapainojen laskemiseen sovellus
