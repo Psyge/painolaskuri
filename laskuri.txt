@@ -1,0 +1,47 @@
+def calculate_reps(start_weight, sets, weight_increment, weight_decrement, weight, reps):
+
+    """
+    Laskee toistomäärän halutun sarjapainon perusteella.
+
+    Args:
+    start_weight (float): Aloituspaino.
+    target_weight (float): Haluttu sarjapaino.
+
+    Returns:
+    int: Toistomäärä (skaalattuna välille 1-10).
+    """
+    return int(reps)
+
+def main():
+    # Pyydetään käyttäjää syöttämään aloituspaino
+    start_weight = float(input("Syötä aloituspaino (kg): "))
+    
+    # Painon lisäys jokaisessa sarjassa
+    weight_increment = 5.0
+    weight_decrement = 5.0
+    weight = 0.7
+    # Lasketaan toistomäärät ja painot kolmelle sarjalle
+                     
+        
+    sets = 5
+    for set_number in range(1, sets + 1):
+        if set_number <= 3:
+                target_weight = start_weight * weight + (set_number - 1) * weight_increment
+        else:
+                target_weight = start_weight * weight + (2 * weight_increment) - ((set_number - 3) * weight_decrement)
+
+        percentage = (target_weight / start_weight) * 100
+        reps = 10 - ((percentage - 50) / 5)
+        reps = int(max(1, min(10, reps)))
+            
+        
+
+    
+
+   # Tulostetaan tulokset
+        print(f"Sarja {set_number}:")
+        print(f"  Paino: {target_weight} kg")
+        print(f"  Toistomäärä: {reps} toistoa")
+        print()
+if __name__ == "__main__":
+    main()
